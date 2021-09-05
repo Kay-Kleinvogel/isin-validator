@@ -1,4 +1,4 @@
-import { removeCountryCode, translateNonNumericCharacters, isValidChecksum } from './../src/index';
+import { translateNonNumericCharacters, isValidChecksum } from './../src/index';
 import { isValidIsin, isIsinFormat, isANumber } from "../src";
 
 describe("isIsinFormat", () => {
@@ -17,11 +17,6 @@ describe("isIsinFormat", () => {
 });
 
 describe ('isinFormater', () => {
-  it('should remove the country prefix of the isin', () => {
-    const isin = 'US0378331005';
-    const targetIsin = '0378331005';
-    expect(removeCountryCode(isin)).toEqual(targetIsin);
-  })
   it('should translate non numeric characters to numeric characters', () => {
     const nonNumericCharacter = 'DE000BAY001';
     const expectedResult = "1314000111034001";
